@@ -36,11 +36,7 @@ mysql --user="root" --password="secret" -e "FLUSH PRIVILEGES;"
 echoe "Installing NGINX"
 
 apt-get install -y nginx
-rm -rf /etc/nginx/sites-available/default
-ln -fs /vagrant/environment/nginx/* /etc/nginx/sites-enabled
-/etc/init.d/nginx restart
 
-echoe "Installing Node.js"
+echoe "Installing PHP"
 
-curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
-sudo apt-get install -y nodejs
+apt-get install php7.0 php7.0-fpm php7.0-xml php7.0-pdo php7.0-mbstring php7.0-gd
